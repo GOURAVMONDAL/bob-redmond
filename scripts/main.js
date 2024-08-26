@@ -284,30 +284,56 @@ document.addEventListener("DOMContentLoaded", (event) => {
   });
 });
 
-var logo = $(".nav-logo img");
-var menuItems = $(".nav-menu .menu-item");
+// NAVBAR
+
+let logo = document.querySelector(".nav-logo img");
+let menuItems = document.querySelector(".navbar-menu .menu-item");
+let navbarMenu = document.querySelector(".navbar-menu");
+let menuInfo = document.querySelector(".nav-info");
+let navbar = document.querySelector(".navbar");
+let menuContent = document.querySelector(".menu-content");
+let navbarToggler = document.querySelector(".navbar-toggler");
+var tl3 = gsap.timeline();
+
+document.addEventListener("DOMContentLoaded", function () {
+  // tl3.to(navbarMenu, {
+  //   opacity: 0,
+  //   x: 2000,
+  // });
+  // tl3.to(logo, {
+  //   width: "180px",
+  //   duration: 0.3,
+  //   ease: "power2.out",
+  // });
+  // tl3.to(menuItems, {
+  //   x: 200,
+  //   opacity: 0,
+  //   duration: 0.5,
+  //   stagger: 0.1,
+  //   ease: "power2.out",
+  // });
+  // tl3.to(menuInfo, {
+  //   y: 0,
+  //   opacity: 1,
+  //   duration: 0.2,
+  //   ease: "power2.out",
+  // });
+  // tl3.to(navbar, {
+  //   height: "0px",
+  //   opacity: 1,
+  //   duration: 0.1,
+  //   ease: "power2.out",
+  // });
+  // tl3.to(menuContent, {
+  //   height: "0px",
+  //   opacity: 0,
+  //   display: "none",
+  // });
+});
 
 $(window).on("scroll", function () {
   if ($(window).scrollTop() > 120) {
-    // Animate logo and menu items to go up and fade out
-    gsap.to(logo, { y: -250, opacity: 0, duration: 0.5, ease: "power2.out" });
-    gsap.to(menuItems, {
-      x: 200,
-      opacity: 0,
-      duration: 0.5,
-      stagger: 0.1,
-      ease: "power2.out",
-    });
   } else {
-    // Animate logo and menu items to return to original position and fade in
-    gsap.to(logo, { y: 0, opacity: 1, duration: 0.5, ease: "power2.out" });
-    gsap.to(menuItems, {
-      x: 0,
-      opacity: 1,
-      duration: 0.5,
-      stagger: 0.1,
-      ease: "power2.out",
-    });
   }
 });
 

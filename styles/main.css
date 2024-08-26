@@ -694,26 +694,85 @@ textarea.black {
 
 .navbar {
   font-family: "Outfit";
-  height: 0px;
-  display: flex;
-  justify-content: space-between;
-  padding: 32px;
   position: fixed;
   width: 100%;
+  z-index: 111;
+  background-color: rgba(238, 244, 255, 0.6);
+  box-shadow: 0 10px 20px rgba(25, 22, 29, 0.12);
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
 }
-.navbar .nav-menu {
+.navbar-content-wrapper {
   display: flex;
   flex-direction: column;
+  padding: 20px;
 }
-.navbar .nav-menu a {
+.navbar-content-wrapper .menu-content {
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 50px;
+}
+.navbar-content-wrapper .menu-content .nav-info {
+  display: flex;
+  gap: 50px;
+  margin: auto;
+}
+.navbar-content-wrapper .menu-content .nav-info .nav-info-box {
+  display: flex;
+}
+.navbar-content-wrapper .menu-content .nav-info .nav-info-box a {
+  display: flex;
+}
+.navbar-content-wrapper .menu-content .nav-info .nav-info-box img {
+  margin-right: 10px;
+}
+.navbar-toggler {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.navbar-toggler-bar {
+  position: relative;
+}
+.navbar-toggler-bar::before {
+  content: "";
+  width: 24px;
+  height: 2px;
+  background-color: #19161d;
+  position: absolute;
+  top: -5px;
+  left: -30px;
+}
+.navbar-toggler-bar::after {
+  content: "";
+  width: 24px;
+  height: 2px;
+  background-color: #19161d;
+  position: absolute;
+  top: 5px;
+  left: -30px;
+}
+.navbar-upper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.navbar-menu {
+  font-family: "Outfit";
+  font-weight: 400;
   font-size: 18px;
-  font-weight: 500;
-  text-transform: capitalize;
-  padding: 12px;
-  text-align: right;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
-.navbar .nav-menu .menu-item.active {
-  font-weight: 800;
+.navbar-menu .active {
+  font-weight: 600;
+}
+.navbar-menu .menu-item {
+  margin: 12px;
+  width: -moz-fit-content;
+  width: fit-content;
+  text-align: center;
 }
 
 .header {

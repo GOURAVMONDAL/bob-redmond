@@ -416,29 +416,126 @@ textarea {
 
 // NAVBAR
 
+// .navbar {
+//   font-family: "Outfit";
+//   // height: 0px;
+//   display: flex;
+//   justify-content: space-between;
+//   padding: 32px;
+//   position: fixed;
+//   width: 100%;
+//   background: red;
+//   z-index: 99;
+
+//   .nav-menu {
+//     display: flex;
+//     flex-direction: column;
+
+//     a {
+//       font-size: 18px;
+//       font-weight: 500;
+//       text-transform: capitalize;
+//       padding: 12px;
+//       text-align: right;
+//     }
+
+//     .menu-item.active {
+//       font-weight: 800;
+//     }
+//   }
+// }
+
 .navbar {
   font-family: "Outfit";
-  height: 0px;
-  display: flex;
-  justify-content: space-between;
-  padding: 32px;
   position: fixed;
   width: 100%;
+  z-index: 111;
+  background-color: rgba($light, 60%);
+  // filter: blur(10px);
+  box-shadow: 0 10px 20px rgba($dark, 12%);
+  backdrop-filter: blur(10px);
 
-  .nav-menu {
+  &-content-wrapper {
     display: flex;
     flex-direction: column;
+    padding: 20px;
 
-    a {
-      font-size: 18px;
-      font-weight: 500;
-      text-transform: capitalize;
-      padding: 12px;
-      text-align: right;
+    .menu-content {
+      display: flex;
+      flex-direction: column-reverse;
+      gap: 50px;
+
+      .nav-info {
+        display: flex;
+        gap: 50px;
+        margin: auto;
+
+        .nav-info-box {
+          display: flex;
+
+          a {
+            display: flex;
+          }
+
+          img {
+            margin-right: 10px;
+          }
+        }
+      }
+    }
+  }
+
+  &-toggler {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &-bar {
+      position: relative;
     }
 
-    .menu-item.active {
-      font-weight: 800;
+    &-bar::before {
+      content: "";
+      width: 24px;
+      height: 2px;
+      background-color: $dark;
+      position: absolute;
+      top: -5px;
+      left: -30px;
+    }
+    &-bar::after {
+      content: "";
+      width: 24px;
+      height: 2px;
+      background-color: $dark;
+      position: absolute;
+      top: 5px;
+      left: -30px;
+    }
+  }
+
+  &-upper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &-menu {
+    font-family: "Outfit";
+    font-weight: 400;
+    font-size: 18px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .active {
+      font-weight: 600;
+    }
+
+    .menu-item {
+      margin: 12px;
+      width: fit-content;
+      text-align: center;
     }
   }
 }
