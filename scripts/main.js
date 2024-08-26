@@ -295,6 +295,19 @@ let menuContent = document.querySelector(".menu-content");
 let navbarToggler = document.querySelector(".navbar-toggler");
 var tl3 = gsap.timeline();
 
+menuContent.style.display = "none";
+navbar.style.height = "0px";
+
+$(window).on("scroll", function () {
+  if ($(window).scrollTop() > 120) {
+    logo.style.width = "180px";
+    navbar.style.height = "78px";
+  } else {
+    navbar.style.height = "0px";
+    logo.style.width = "auto";
+  }
+});
+
 document.addEventListener("DOMContentLoaded", function () {
   // tl3.to(navbarMenu, {
   //   opacity: 0,
@@ -329,12 +342,6 @@ document.addEventListener("DOMContentLoaded", function () {
   //   opacity: 0,
   //   display: "none",
   // });
-});
-
-$(window).on("scroll", function () {
-  if ($(window).scrollTop() > 120) {
-  } else {
-  }
 });
 
 gsap.from(".header-img .car", {
